@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from models import CardSuit
+from models import CardSuit, Card
 
 suits = [CardSuit.clubs, CardSuit.diamonds, CardSuit.hearts, CardSuit.spades]
 values = range(6, 14)
@@ -14,3 +14,7 @@ async def read_all_cards():
         for value in values
         for suit in suits
     ]
+
+@app.post("/cards/create")
+async def create_card(card: Card):
+    return card
