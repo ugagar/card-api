@@ -15,6 +15,6 @@ async def read_all_cards():
         for suit in suits
     ]
 
-@app.post("/cards/create")
+@app.put("/cards/create")
 async def create_card(card: Card):
     return card
