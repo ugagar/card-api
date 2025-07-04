@@ -1,11 +1,6 @@
-from enum import Enum
 from pydantic import BaseModel
 
-class CardSuit(str, Enum):
-    hearts = "hearts"
-    spades = "spades"
-    diamonds = "diamonds"
-    clubs = "clubs"
+from constants import CardSuit
 
 class Card(BaseModel):
     value: int
