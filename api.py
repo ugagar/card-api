@@ -7,7 +7,7 @@ from models import Card, Deck
 
 app = FastAPI()
 
-@app.get("/cards/all")
+@app.get("/deck")
 async def read_all_cards(deck: Deck):
     return deck
 
@@ -15,7 +15,7 @@ async def read_all_cards(deck: Deck):
 async def create_card(card: Card):
     return card
 
-@app.put("/deck/shuffle")
+@app.post("/deck/shuffle")
 async def shuffle_deck(deck: Deck):
     rand_shuffle(deck.cards)
     return {
