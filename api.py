@@ -2,21 +2,13 @@ from fastapi import FastAPI
 from random import shuffle as rand_shuffle
 
 from constants import CARD_SUITS, CARD_VALUES
-from models import Card
+from models import Card, Deck
 
 
 app = FastAPI()
 
-deck = []
-
 @app.get("/cards/all")
-async def read_all_cards():
-    global deck
-    deck = [
-        {"value": value, "suit": suit}
-        for value in CARD_VALUES
-        for suit in CARD_SUITS
-    ]
+async def read_all_cards(deck: Deck):
     return deck
 
 @app.put("/cards/create")
