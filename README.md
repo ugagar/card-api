@@ -5,13 +5,14 @@
 - [X] Написать модель карт (Pydantic)
 - [ ] Добавить endpoints:
 	GET
-	- [ ] Получение всей колоды (`get "/cards/all"`)
+	- [X] Получение всей колоды (`get "/deck"`)
 	- [ ] Получение карт по значению (`get "/cards/card?value=<value>&suit=<suit>"`)
 	- [ ] Получение карт по масти (`get "/cards/{suit}"`)
 	- [ ] Получение карт по значению (`get "/cards/{value}"`)
 	- [ ] Получение случайной карты (`get "cards/random"`)
 	POST
 	- [ ] Добавить карту в колоду (`post "/cards/card?value=<value>&suit=<suit>"`)
+	- [X] Перемешать колоду карт (`post "/deck/shuffle"`)
 	DELETE
 	- [ ] Удалить карту из колоды (`delete "/cards/card?value=<value>&suit=<suit>"`)
 - [ ] Использование бд
