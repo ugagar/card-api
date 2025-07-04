@@ -12,3 +12,5 @@ class Deck(BaseModel):
         for value in CARD_VALUES
         for suit in CARD_SUITS
     ]
+
+DEFOULT_DECK = Deck()
