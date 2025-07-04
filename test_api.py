@@ -1,6 +1,8 @@
 from fastapi.testclient import TestClient
 from api import app
 
+from models import Deck
+
 client = TestClient(app)
 
 def test_get_deck():
@@ -8,5 +10,6 @@ def test_get_deck():
     assert response.status_code == 200
 
 def test_shuffle_deck():
-    response = client.post("/deck/shuffle")
-    assert response.status_code == (200, 201, 202)
+    response: Deck = client.post("/deck/shuffle")
+    assert response.cards
+    assert response.status_code in (200, 201, 202)
