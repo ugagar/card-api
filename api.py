@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from constants import CARD_SUITS, CARD_VALUES
 from models import Card
 
+
 app = FastAPI()
 
 @app.get("/cards/all")
