@@ -15,7 +15,7 @@ async def read_all_cards(deck: Deck):
 async def create_card(card: Card):
     return card
 
-@app.post("/deck/shuffle")
+@app.put("/deck/shuffle")
 async def shuffle_deck(deck: Deck):
     rand_shuffle(deck.cards)
     return {
